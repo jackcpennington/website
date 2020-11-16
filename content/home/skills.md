@@ -27,7 +27,7 @@ subtitle = ""
   description = "Data Visualisation, Statistical Modelling, Data Collection & Processing"
 
 [[feature]]
-  icon = "chart-line"
+  icon = "robot"
   icon_pack = "fas"
   name = "Machine Learning"
   description = "Time Series Forecasting, Neural Networks, Classification, Regression, Clustering, NLP, Computer Vision"

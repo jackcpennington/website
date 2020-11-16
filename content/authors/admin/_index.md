@@ -56,7 +56,8 @@ highlight_name: false
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
-user_groups:[]
+user_groups: []
+
 ---
 
 Current undergraduate undertaking my last year at Southampton University, looking for a graduate role for 2021. Eager to learn about emerging technologies and develop new skills; my interest lies in Machine Learning and building user-centred designs and technology. Detail-oriented and multidisciplinary with excellent communication skills and a dedicated, supportive team member.

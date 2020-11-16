@@ -26,9 +26,9 @@ date_format = "Jan 2006"
   date_end = "2017-09-01"
   description = """
   Developed and deployed a model to forecast GDP growth in the manufacturing sector. Used large time series of multiple indicators and lagged variables.
-  *Conducted exploratory data analysis to decide on the model to create.
-  *Worked remotely and had weekly meetings with my supervisor.
-  *Created expert visualisations of the forecasts produced for evaluation.
+    * Conducted exploratorydata analysis to decide on the model to create.
+    * Worked remotely and had weekly meetings with my supervisor.
+    * Created expert visualisations of the forecasts produced for evaluation.
   """
 
 

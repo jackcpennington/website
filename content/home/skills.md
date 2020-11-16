@@ -15,22 +15,41 @@ subtitle = ""
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
-  icon = "r-project"
-  icon_pack = "fab"
-  name = "R"
-  description = "90%"
-  
+  icon = "code"
+  icon_pack = "fas"
+  name = "Languages"
+  description = "**Python**, **Java**, **SQL**, JavaScript, HTML & CSS, Haskell"
+
 [[feature]]
   icon = "chart-line"
   icon_pack = "fas"
-  name = "Statistics"
-  description = "100%"  
+  name = "Data Analysis"
+  description = "Data Visualisation, Statistical Modelling, Data Collection & Processing"
+
+[[feature]]
+  icon = "chart-line"
+  icon_pack = "fas"
+  name = "Machine Learning"
+  description = "Time Series Forecasting, Neural Networks, Classification, Regression, Clustering, NLP, Computer Vision"
   
 [[feature]]
-  icon = "camera-retro"
+  icon = "toolbox"
   icon_pack = "fas"
-  name = "Photography"
-  description = "10%"
+  name = "Tools and Libraries"
+  description = "Linux, Git, Tableau, AWS, Python Libraries (Pandas, Scikit-learn, Matplotlib etc.), Tensorflow, React.js"
+
+[[feature]]
+  icon = "project-diagram"
+  icon_pack = "fas"
+  name = "Software Engineering"
+  description = "CI/CD Pieplines, Testing, Documenting, Continuous integration, Agile, Scrum"
+  
+[[feature]]
+  icon = "file-alt"
+  icon_pack = "fas"
+  name = "Computer Science"
+  description = "Algorithm Design, Data structures, Complexity, Theory of Computation, Computer Systems Design"
+
 
 # Uncomment to use emoji icons.
 # [[feature]]

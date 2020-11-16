@@ -17,7 +17,7 @@ organizations:
 bio: My interests include machine learning, data visualisation and software engineering.
 
 interests:
-- Machine Learngin
+- Machine Learning
 - Data Analysis
 - Data Visualisation
 - Software Engineering
@@ -39,7 +39,7 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/jackcpennington
-- icon: linedin
+- icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/jackpennington1/
 # Link to a PDF of your resume/CV from the About widget.

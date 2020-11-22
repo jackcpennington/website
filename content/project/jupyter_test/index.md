@@ -45,7 +45,7 @@ df.head()
 
 
 
-<div style = “overflow-x: scroll;”>
+<div style=“overflow-x: scroll;”>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;

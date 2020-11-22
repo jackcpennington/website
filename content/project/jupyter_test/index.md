@@ -62,10 +62,10 @@ import numpy as np
 import plotly.express as px
 import re
 
-pd.set_option('display.max_rows', None)
+#pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
-pd.set_option('display.width', None)
-pd.set_option('display.max_colwidth', -1)
+#pd.set_option('display.width', None)
+#pd.set_option('display.max_colwidth', -1)
 ```
 
 
@@ -1644,7 +1644,7 @@ sns.countplot(x="BP", data=test_df, order=test_df["BP"].value_counts().index)
 
 
     
-![svg](./md_project/index_17_1.svg)
+![svg](./index_17_1.svg)
     
 
 
@@ -1662,7 +1662,7 @@ sns.countplot(data=train_df, x="Nationality", order=train_df["Nationality"].valu
 
 
     
-![svg](./md_project/index_18_1.svg)
+![svg](./index_18_1.svg)
     
 
 
@@ -1682,7 +1682,7 @@ sns.countplot(x="BP", hue = "foot", data=train_df)
 
 
     
-![svg](./md_project/index_20_1.svg)
+![svg](./index_20_1.svg)
     
 
 
@@ -1721,7 +1721,7 @@ sns.countplot(data=train_df, x="Pos_Type")
 
 
     
-![svg](./md_project/index_22_1.svg)
+![svg](./index_22_1.svg)
     
 
 
@@ -1747,7 +1747,7 @@ sns.jointplot(data=train_df, x="Weight in lb", y="Height in cm", hue="Pos_Type",
 
 
     
-![svg](./md_project/index_24_1.svg)
+![svg](./index_24_1.svg)
     
 
 
@@ -1767,19 +1767,19 @@ sns.displot(data=train_df, x="Power", hue="Pos_Type", stat="frequency", kde=True
 
 
     
-![svg](./md_project/index_25_1.svg)
+![svg](./index_25_1.svg)
     
 
 
 
     
-![svg](./md_project/index_25_2.svg)
+![svg](./index_25_2.svg)
     
 
 
 
     
-![svg](./md_project/index_25_3.svg)
+![svg](./index_25_3.svg)
     
 
 
@@ -1797,7 +1797,7 @@ sns.violinplot(data=train_df, x="Pos_Type", y="Finishing")
 
 
     
-![svg](./md_project/index_26_1.svg)
+![svg](./index_26_1.svg)
     
 
 
@@ -1815,7 +1815,7 @@ sns.violinplot(data=train_df, x="Pos_Type", y="Heading Accuracy")
 
 
     
-![svg](./md_project/index_27_1.svg)
+![svg](./index_27_1.svg)
     
 
 
@@ -1833,7 +1833,7 @@ sns.violinplot(data=train_df, x="Pos_Type", y="Goalkeeping")
 
 
     
-![svg](./md_project/index_28_1.svg)
+![svg](./index_28_1.svg)
     
 
 

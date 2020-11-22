@@ -30,6 +30,7 @@ projects: []
 ```python
 import pandas as pd
 pd.set_option('max_columns', None)
+pd.set_option('max_colwidth', 1000)
 ```
 
 

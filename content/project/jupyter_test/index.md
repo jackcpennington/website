@@ -30,7 +30,7 @@ projects: []
 ```python
 import pandas as pd
 pd.set_option('max_columns', None)
-pd.set_option('max_colwidth', 1000)
+pd.set_option('max_colwidth', None)
 ```
 
 
@@ -40,130 +40,693 @@ df = pd.read_csv("fifa21_male2.csv")
 
 
 ```python
-df.head().to_html
+df.head()
 ```
 
 
 
 
-    <bound method DataFrame.to_html of    ID         Name  Age  OVA            Nationality           Club  BOV   BP  \
-    0   2  G. Pasquale   33   69                  Italy        Udinese   71  LWB   
-    1  16  Luis García   37   71                  Spain      KAS Eupen   70   CM   
-    2  27      J. Cole   33   71                England  Coventry City   71  CAM   
-    3  36     D. Yorke   36   68  Trinidad &amp; Tobago     Sunderland   70   ST   
-    4  41      Iniesta   36   81                  Spain    Vissel Kobe   82  CAM   
-    
-           Position                                       Player Photo  \
-    0            LM  https://cdn.sofifa.com/players/000/002/16_120.png   
-    1    CM CAM CDM  https://cdn.sofifa.com/players/000/016/19_120.png   
-    2  CAM RM RW LM  https://cdn.sofifa.com/players/000/027/16_120.png   
-    3           NaN  https://cdn.sofifa.com/players/000/036/09_120.png   
-    4        CM CAM  https://cdn.sofifa.com/players/000/041/20_120.png   
-    
-                                              Club Logo  \
-    0      https://cdn.sofifa.com/teams/55/light_60.png   
-    1    https://cdn.sofifa.com/teams/2013/light_60.png   
-    2    https://cdn.sofifa.com/teams/1800/light_60.png   
-    3     https://cdn.sofifa.com/teams/106/light_60.png   
-    4  https://cdn.sofifa.com/teams/101146/light_60.png   
-    
-                                    Flag Photo  POT            Team & Contract  \
-    0      https://cdn.sofifa.com/flags/it.png   69        Udinese 2008 ~ 2016   
-    1      https://cdn.sofifa.com/flags/es.png   71      KAS Eupen 2014 ~ 2019   
-    2  https://cdn.sofifa.com/flags/gb-eng.png   71  Coventry City 2016 ~ 2020   
-    3      https://cdn.sofifa.com/flags/tt.png   82            Sunderland 2009   
-    4      https://cdn.sofifa.com/flags/es.png   81    Vissel Kobe 2018 ~ 2021   
-    
-      Height  Weight   foot  Growth        Joined Loan Date End  Value  Wage  \
-    0   6'0"  181lbs   Left       0   Jul 1, 2008           NaN  €625K   €7K   
-    1  5'10"  143lbs  Right       0  Jul 19, 2014           NaN  €600K   €7K   
-    2   5'9"  161lbs  Right       0   Jan 7, 2016           NaN  €1.1M  €15K   
-    3  5'11"  165lbs  Right      14           NaN           NaN     €0    €0   
-    4   5'7"  150lbs  Right       0  Jul 16, 2018           NaN  €5.5M  €12K   
-    
-      Release Clause     Contract  Attacking  Crossing  Finishing  \
-    0             €0  2008 ~ 2016        313        75         50   
-    1          €1.1M  2014 ~ 2019        337        68         64   
-    2             €0  2016 ~ 2020        337        80         64   
-    3             €0         2009        264        54         70   
-    4          €7.2M  2018 ~ 2021        367        75         69   
-    
-       Heading Accuracy  Short Passing  Volleys  Skill  Dribbling  Curve  \
-    0                59             71     58.0    338         73   65.0   
-    1                61             76     68.0    369         69   79.0   
-    2                41             77     75.0    387         79   84.0   
-    3                60             80      NaN    255         68    NaN   
-    4                54             90     79.0    408         85   80.0   
-    
-       FK Accuracy  Long Passing  Ball Control  Movement  Acceleration  \
-    0           60            69            71       347            68   
-    1           79            71            71       305            56   
-    2           77            69            78       295            48   
-    3           46            64            77       176            59   
-    4           70            83            90       346            61   
-    
-       Sprint Speed  Agility  Reactions  Balance  Power  Shot Power  Jumping  \
-    0            74     68.0         69     68.0    347          74     68.0   
-    1            50     62.0         65     72.0    324          75     54.0   
-    2            42     71.0         59     75.0    284          72     58.0   
-    3            62      NaN         55      NaN    239          63      NaN   
-    4            56     79.0         75     75.0    297          67     40.0   
-    
-       Stamina  Strength  Long Shots  Mentality  Aggression  Interceptions  \
-    0       69        68          68        320          72           69.0   
-    1       64        60          71        362          71           71.0   
-    2       29        56          69        317          69           39.0   
-    3       51        66          59        271          59           70.0   
-    4       58        62          70        370          58           70.0   
-    
-       Positioning  Vision  Penalties  Composure  Defending  Marking  \
-    0         63.0    66.0         50        NaN        208       70   
-    1         72.0    73.0         75       79.0        153       70   
-    2         69.0    74.0         66        NaN         99       35   
-    3         72.0     NaN         70        NaN         75       34   
-    4         78.0    93.0         71       89.0        181       68   
-    
-       Standing Tackle  Sliding Tackle  Goalkeeping  GK Diving  GK Handling  \
-    0               69            69.0           56         14            5   
-    1               43            40.0           56          9           12   
-    2               34            30.0           51          9            6   
-    3               41             NaN           68          5           21   
-    4               57            56.0           45          6           13   
-    
-       GK Kicking  GK Positioning  GK Reflexes  Total Stats  Base Stats  W/F  SM  \
-    0          15              10           12         1929         408  3 ★  2★   
-    1          13              11           11         1906         385  4 ★  3★   
-    2          13              16            7         1770         354  4 ★  4★   
-    3          64              21           21         1348         369  3 ★  1★   
-    4           6              13            7         2014         420  4 ★  4★   
-    
-          A/W     D/W   IR  PAC  SHO  PAS  DRI  DEF  PHY Hits    LS    ST    RS  \
-    0  Medium    High  2 ★   71   59   70   71   68   69    4  65+0  65+0  65+0   
-    1  Medium  Medium  1 ★   53   69   73   69   58   63    4  67+1  67+1  67+1   
-    2  Medium     Low  2 ★   45   68   76   77   36   52   11  64+0  64+0  64+0   
-    3     NaN     NaN  1 ★   61   66   66   69   47   60    3  67+0  67+0  67+0   
-    4    High  Medium  4 ★   58   70   85   85   63   59  149  72+3  72+3  72+3   
-    
-         LW    LF    CF    RF    RW    LAM    CAM    RAM    LM   LCM    CM   RCM  \
-    0  68+0  67+0  67+0  67+0  68+0   68+0   68+0   68+0  69+0  69+0  69+0  69+0   
-    1  67+0  68+0  68+0  68+0  67+0   70+1   70+1   70+1  68+1  70+1  70+1  70+1   
-    2  70+0  69+0  69+0  69+0  70+0   71+0   71+0   71+0  68+0  66+0  66+0  66+0   
-    3  66+0  67+0  67+0  67+0  66+0   70+0   70+0   70+0  66+0  68+0  68+0  68+0   
-    4  79+0  79+0  79+0  79+0  79+0  82+-1  82+-1  82+-1  79+2  81+0  81+0  81+0   
-    
-         RM    LWB    LDM    CDM    RDM    RWB     LB   LCB    CB   RCB     RB  \
-    0  69+0  71+-2  70+-1  70+-1  70+-1  71+-2  70+-1  69+0  69+0  69+0  70+-1   
-    1  68+1   62+1   66+1   66+1   66+1   62+1   60+1  60+1  60+1  60+1   60+1   
-    2  68+0   52+0   54+0   54+0   54+0   52+0   47+0  46+0  46+0  46+0   47+0   
-    3  66+0   56+0   65+0   65+0   65+0   56+0   57+0  51+0  51+0  51+0   57+0   
-    4  79+2   70+3   73+3   73+3   73+3   70+3   67+3  64+3  64+3  64+3   67+3   
-    
-         GK Gender  
-    0  17+0   Male  
-    1  17+1   Male  
-    2  15+0   Male  
-    3  22+0   Male  
-    4  17+3   Male  >
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>OVA</th>
+      <th>Nationality</th>
+      <th>Club</th>
+      <th>BOV</th>
+      <th>BP</th>
+      <th>Position</th>
+      <th>Player Photo</th>
+      <th>Club Logo</th>
+      <th>Flag Photo</th>
+      <th>POT</th>
+      <th>Team &amp; Contract</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>foot</th>
+      <th>Growth</th>
+      <th>Joined</th>
+      <th>Loan Date End</th>
+      <th>Value</th>
+      <th>Wage</th>
+      <th>Release Clause</th>
+      <th>Contract</th>
+      <th>Attacking</th>
+      <th>Crossing</th>
+      <th>Finishing</th>
+      <th>Heading Accuracy</th>
+      <th>Short Passing</th>
+      <th>Volleys</th>
+      <th>Skill</th>
+      <th>Dribbling</th>
+      <th>Curve</th>
+      <th>FK Accuracy</th>
+      <th>Long Passing</th>
+      <th>Ball Control</th>
+      <th>Movement</th>
+      <th>Acceleration</th>
+      <th>Sprint Speed</th>
+      <th>Agility</th>
+      <th>Reactions</th>
+      <th>Balance</th>
+      <th>Power</th>
+      <th>Shot Power</th>
+      <th>Jumping</th>
+      <th>Stamina</th>
+      <th>Strength</th>
+      <th>Long Shots</th>
+      <th>Mentality</th>
+      <th>Aggression</th>
+      <th>Interceptions</th>
+      <th>Positioning</th>
+      <th>Vision</th>
+      <th>Penalties</th>
+      <th>Composure</th>
+      <th>Defending</th>
+      <th>Marking</th>
+      <th>Standing Tackle</th>
+      <th>Sliding Tackle</th>
+      <th>Goalkeeping</th>
+      <th>GK Diving</th>
+      <th>GK Handling</th>
+      <th>GK Kicking</th>
+      <th>GK Positioning</th>
+      <th>GK Reflexes</th>
+      <th>Total Stats</th>
+      <th>Base Stats</th>
+      <th>W/F</th>
+      <th>SM</th>
+      <th>A/W</th>
+      <th>D/W</th>
+      <th>IR</th>
+      <th>PAC</th>
+      <th>SHO</th>
+      <th>PAS</th>
+      <th>DRI</th>
+      <th>DEF</th>
+      <th>PHY</th>
+      <th>Hits</th>
+      <th>LS</th>
+      <th>ST</th>
+      <th>RS</th>
+      <th>LW</th>
+      <th>LF</th>
+      <th>CF</th>
+      <th>RF</th>
+      <th>RW</th>
+      <th>LAM</th>
+      <th>CAM</th>
+      <th>RAM</th>
+      <th>LM</th>
+      <th>LCM</th>
+      <th>CM</th>
+      <th>RCM</th>
+      <th>RM</th>
+      <th>LWB</th>
+      <th>LDM</th>
+      <th>CDM</th>
+      <th>RDM</th>
+      <th>RWB</th>
+      <th>LB</th>
+      <th>LCB</th>
+      <th>CB</th>
+      <th>RCB</th>
+      <th>RB</th>
+      <th>GK</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>G. Pasquale</td>
+      <td>33</td>
+      <td>69</td>
+      <td>Italy</td>
+      <td>Udinese</td>
+      <td>71</td>
+      <td>LWB</td>
+      <td>LM</td>
+      <td>https://cdn.sofifa.com/players/000/002/16_120.png</td>
+      <td>https://cdn.sofifa.com/teams/55/light_60.png</td>
+      <td>https://cdn.sofifa.com/flags/it.png</td>
+      <td>69</td>
+      <td>Udinese 2008 ~ 2016</td>
+      <td>6'0"</td>
+      <td>181lbs</td>
+      <td>Left</td>
+      <td>0</td>
+      <td>Jul 1, 2008</td>
+      <td>NaN</td>
+      <td>€625K</td>
+      <td>€7K</td>
+      <td>€0</td>
+      <td>2008 ~ 2016</td>
+      <td>313</td>
+      <td>75</td>
+      <td>50</td>
+      <td>59</td>
+      <td>71</td>
+      <td>58.0</td>
+      <td>338</td>
+      <td>73</td>
+      <td>65.0</td>
+      <td>60</td>
+      <td>69</td>
+      <td>71</td>
+      <td>347</td>
+      <td>68</td>
+      <td>74</td>
+      <td>68.0</td>
+      <td>69</td>
+      <td>68.0</td>
+      <td>347</td>
+      <td>74</td>
+      <td>68.0</td>
+      <td>69</td>
+      <td>68</td>
+      <td>68</td>
+      <td>320</td>
+      <td>72</td>
+      <td>69.0</td>
+      <td>63.0</td>
+      <td>66.0</td>
+      <td>50</td>
+      <td>NaN</td>
+      <td>208</td>
+      <td>70</td>
+      <td>69</td>
+      <td>69.0</td>
+      <td>56</td>
+      <td>14</td>
+      <td>5</td>
+      <td>15</td>
+      <td>10</td>
+      <td>12</td>
+      <td>1929</td>
+      <td>408</td>
+      <td>3 ★</td>
+      <td>2★</td>
+      <td>Medium</td>
+      <td>High</td>
+      <td>2 ★</td>
+      <td>71</td>
+      <td>59</td>
+      <td>70</td>
+      <td>71</td>
+      <td>68</td>
+      <td>69</td>
+      <td>4</td>
+      <td>65+0</td>
+      <td>65+0</td>
+      <td>65+0</td>
+      <td>68+0</td>
+      <td>67+0</td>
+      <td>67+0</td>
+      <td>67+0</td>
+      <td>68+0</td>
+      <td>68+0</td>
+      <td>68+0</td>
+      <td>68+0</td>
+      <td>69+0</td>
+      <td>69+0</td>
+      <td>69+0</td>
+      <td>69+0</td>
+      <td>69+0</td>
+      <td>71+-2</td>
+      <td>70+-1</td>
+      <td>70+-1</td>
+      <td>70+-1</td>
+      <td>71+-2</td>
+      <td>70+-1</td>
+      <td>69+0</td>
+      <td>69+0</td>
+      <td>69+0</td>
+      <td>70+-1</td>
+      <td>17+0</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>16</td>
+      <td>Luis García</td>
+      <td>37</td>
+      <td>71</td>
+      <td>Spain</td>
+      <td>KAS Eupen</td>
+      <td>70</td>
+      <td>CM</td>
+      <td>CM CAM CDM</td>
+      <td>https://cdn.sofifa.com/players/000/016/19_120.png</td>
+      <td>https://cdn.sofifa.com/teams/2013/light_60.png</td>
+      <td>https://cdn.sofifa.com/flags/es.png</td>
+      <td>71</td>
+      <td>KAS Eupen 2014 ~ 2019</td>
+      <td>5'10"</td>
+      <td>143lbs</td>
+      <td>Right</td>
+      <td>0</td>
+      <td>Jul 19, 2014</td>
+      <td>NaN</td>
+      <td>€600K</td>
+      <td>€7K</td>
+      <td>€1.1M</td>
+      <td>2014 ~ 2019</td>
+      <td>337</td>
+      <td>68</td>
+      <td>64</td>
+      <td>61</td>
+      <td>76</td>
+      <td>68.0</td>
+      <td>369</td>
+      <td>69</td>
+      <td>79.0</td>
+      <td>79</td>
+      <td>71</td>
+      <td>71</td>
+      <td>305</td>
+      <td>56</td>
+      <td>50</td>
+      <td>62.0</td>
+      <td>65</td>
+      <td>72.0</td>
+      <td>324</td>
+      <td>75</td>
+      <td>54.0</td>
+      <td>64</td>
+      <td>60</td>
+      <td>71</td>
+      <td>362</td>
+      <td>71</td>
+      <td>71.0</td>
+      <td>72.0</td>
+      <td>73.0</td>
+      <td>75</td>
+      <td>79.0</td>
+      <td>153</td>
+      <td>70</td>
+      <td>43</td>
+      <td>40.0</td>
+      <td>56</td>
+      <td>9</td>
+      <td>12</td>
+      <td>13</td>
+      <td>11</td>
+      <td>11</td>
+      <td>1906</td>
+      <td>385</td>
+      <td>4 ★</td>
+      <td>3★</td>
+      <td>Medium</td>
+      <td>Medium</td>
+      <td>1 ★</td>
+      <td>53</td>
+      <td>69</td>
+      <td>73</td>
+      <td>69</td>
+      <td>58</td>
+      <td>63</td>
+      <td>4</td>
+      <td>67+1</td>
+      <td>67+1</td>
+      <td>67+1</td>
+      <td>67+0</td>
+      <td>68+0</td>
+      <td>68+0</td>
+      <td>68+0</td>
+      <td>67+0</td>
+      <td>70+1</td>
+      <td>70+1</td>
+      <td>70+1</td>
+      <td>68+1</td>
+      <td>70+1</td>
+      <td>70+1</td>
+      <td>70+1</td>
+      <td>68+1</td>
+      <td>62+1</td>
+      <td>66+1</td>
+      <td>66+1</td>
+      <td>66+1</td>
+      <td>62+1</td>
+      <td>60+1</td>
+      <td>60+1</td>
+      <td>60+1</td>
+      <td>60+1</td>
+      <td>60+1</td>
+      <td>17+1</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>27</td>
+      <td>J. Cole</td>
+      <td>33</td>
+      <td>71</td>
+      <td>England</td>
+      <td>Coventry City</td>
+      <td>71</td>
+      <td>CAM</td>
+      <td>CAM RM RW LM</td>
+      <td>https://cdn.sofifa.com/players/000/027/16_120.png</td>
+      <td>https://cdn.sofifa.com/teams/1800/light_60.png</td>
+      <td>https://cdn.sofifa.com/flags/gb-eng.png</td>
+      <td>71</td>
+      <td>Coventry City 2016 ~ 2020</td>
+      <td>5'9"</td>
+      <td>161lbs</td>
+      <td>Right</td>
+      <td>0</td>
+      <td>Jan 7, 2016</td>
+      <td>NaN</td>
+      <td>€1.1M</td>
+      <td>€15K</td>
+      <td>€0</td>
+      <td>2016 ~ 2020</td>
+      <td>337</td>
+      <td>80</td>
+      <td>64</td>
+      <td>41</td>
+      <td>77</td>
+      <td>75.0</td>
+      <td>387</td>
+      <td>79</td>
+      <td>84.0</td>
+      <td>77</td>
+      <td>69</td>
+      <td>78</td>
+      <td>295</td>
+      <td>48</td>
+      <td>42</td>
+      <td>71.0</td>
+      <td>59</td>
+      <td>75.0</td>
+      <td>284</td>
+      <td>72</td>
+      <td>58.0</td>
+      <td>29</td>
+      <td>56</td>
+      <td>69</td>
+      <td>317</td>
+      <td>69</td>
+      <td>39.0</td>
+      <td>69.0</td>
+      <td>74.0</td>
+      <td>66</td>
+      <td>NaN</td>
+      <td>99</td>
+      <td>35</td>
+      <td>34</td>
+      <td>30.0</td>
+      <td>51</td>
+      <td>9</td>
+      <td>6</td>
+      <td>13</td>
+      <td>16</td>
+      <td>7</td>
+      <td>1770</td>
+      <td>354</td>
+      <td>4 ★</td>
+      <td>4★</td>
+      <td>Medium</td>
+      <td>Low</td>
+      <td>2 ★</td>
+      <td>45</td>
+      <td>68</td>
+      <td>76</td>
+      <td>77</td>
+      <td>36</td>
+      <td>52</td>
+      <td>11</td>
+      <td>64+0</td>
+      <td>64+0</td>
+      <td>64+0</td>
+      <td>70+0</td>
+      <td>69+0</td>
+      <td>69+0</td>
+      <td>69+0</td>
+      <td>70+0</td>
+      <td>71+0</td>
+      <td>71+0</td>
+      <td>71+0</td>
+      <td>68+0</td>
+      <td>66+0</td>
+      <td>66+0</td>
+      <td>66+0</td>
+      <td>68+0</td>
+      <td>52+0</td>
+      <td>54+0</td>
+      <td>54+0</td>
+      <td>54+0</td>
+      <td>52+0</td>
+      <td>47+0</td>
+      <td>46+0</td>
+      <td>46+0</td>
+      <td>46+0</td>
+      <td>47+0</td>
+      <td>15+0</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>36</td>
+      <td>D. Yorke</td>
+      <td>36</td>
+      <td>68</td>
+      <td>Trinidad &amp;amp; Tobago</td>
+      <td>Sunderland</td>
+      <td>70</td>
+      <td>ST</td>
+      <td>NaN</td>
+      <td>https://cdn.sofifa.com/players/000/036/09_120.png</td>
+      <td>https://cdn.sofifa.com/teams/106/light_60.png</td>
+      <td>https://cdn.sofifa.com/flags/tt.png</td>
+      <td>82</td>
+      <td>Sunderland 2009</td>
+      <td>5'11"</td>
+      <td>165lbs</td>
+      <td>Right</td>
+      <td>14</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>€0</td>
+      <td>€0</td>
+      <td>€0</td>
+      <td>2009</td>
+      <td>264</td>
+      <td>54</td>
+      <td>70</td>
+      <td>60</td>
+      <td>80</td>
+      <td>NaN</td>
+      <td>255</td>
+      <td>68</td>
+      <td>NaN</td>
+      <td>46</td>
+      <td>64</td>
+      <td>77</td>
+      <td>176</td>
+      <td>59</td>
+      <td>62</td>
+      <td>NaN</td>
+      <td>55</td>
+      <td>NaN</td>
+      <td>239</td>
+      <td>63</td>
+      <td>NaN</td>
+      <td>51</td>
+      <td>66</td>
+      <td>59</td>
+      <td>271</td>
+      <td>59</td>
+      <td>70.0</td>
+      <td>72.0</td>
+      <td>NaN</td>
+      <td>70</td>
+      <td>NaN</td>
+      <td>75</td>
+      <td>34</td>
+      <td>41</td>
+      <td>NaN</td>
+      <td>68</td>
+      <td>5</td>
+      <td>21</td>
+      <td>64</td>
+      <td>21</td>
+      <td>21</td>
+      <td>1348</td>
+      <td>369</td>
+      <td>3 ★</td>
+      <td>1★</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1 ★</td>
+      <td>61</td>
+      <td>66</td>
+      <td>66</td>
+      <td>69</td>
+      <td>47</td>
+      <td>60</td>
+      <td>3</td>
+      <td>67+0</td>
+      <td>67+0</td>
+      <td>67+0</td>
+      <td>66+0</td>
+      <td>67+0</td>
+      <td>67+0</td>
+      <td>67+0</td>
+      <td>66+0</td>
+      <td>70+0</td>
+      <td>70+0</td>
+      <td>70+0</td>
+      <td>66+0</td>
+      <td>68+0</td>
+      <td>68+0</td>
+      <td>68+0</td>
+      <td>66+0</td>
+      <td>56+0</td>
+      <td>65+0</td>
+      <td>65+0</td>
+      <td>65+0</td>
+      <td>56+0</td>
+      <td>57+0</td>
+      <td>51+0</td>
+      <td>51+0</td>
+      <td>51+0</td>
+      <td>57+0</td>
+      <td>22+0</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>41</td>
+      <td>Iniesta</td>
+      <td>36</td>
+      <td>81</td>
+      <td>Spain</td>
+      <td>Vissel Kobe</td>
+      <td>82</td>
+      <td>CAM</td>
+      <td>CM CAM</td>
+      <td>https://cdn.sofifa.com/players/000/041/20_120.png</td>
+      <td>https://cdn.sofifa.com/teams/101146/light_60.png</td>
+      <td>https://cdn.sofifa.com/flags/es.png</td>
+      <td>81</td>
+      <td>Vissel Kobe 2018 ~ 2021</td>
+      <td>5'7"</td>
+      <td>150lbs</td>
+      <td>Right</td>
+      <td>0</td>
+      <td>Jul 16, 2018</td>
+      <td>NaN</td>
+      <td>€5.5M</td>
+      <td>€12K</td>
+      <td>€7.2M</td>
+      <td>2018 ~ 2021</td>
+      <td>367</td>
+      <td>75</td>
+      <td>69</td>
+      <td>54</td>
+      <td>90</td>
+      <td>79.0</td>
+      <td>408</td>
+      <td>85</td>
+      <td>80.0</td>
+      <td>70</td>
+      <td>83</td>
+      <td>90</td>
+      <td>346</td>
+      <td>61</td>
+      <td>56</td>
+      <td>79.0</td>
+      <td>75</td>
+      <td>75.0</td>
+      <td>297</td>
+      <td>67</td>
+      <td>40.0</td>
+      <td>58</td>
+      <td>62</td>
+      <td>70</td>
+      <td>370</td>
+      <td>58</td>
+      <td>70.0</td>
+      <td>78.0</td>
+      <td>93.0</td>
+      <td>71</td>
+      <td>89.0</td>
+      <td>181</td>
+      <td>68</td>
+      <td>57</td>
+      <td>56.0</td>
+      <td>45</td>
+      <td>6</td>
+      <td>13</td>
+      <td>6</td>
+      <td>13</td>
+      <td>7</td>
+      <td>2014</td>
+      <td>420</td>
+      <td>4 ★</td>
+      <td>4★</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>4 ★</td>
+      <td>58</td>
+      <td>70</td>
+      <td>85</td>
+      <td>85</td>
+      <td>63</td>
+      <td>59</td>
+      <td>149</td>
+      <td>72+3</td>
+      <td>72+3</td>
+      <td>72+3</td>
+      <td>79+0</td>
+      <td>79+0</td>
+      <td>79+0</td>
+      <td>79+0</td>
+      <td>79+0</td>
+      <td>82+-1</td>
+      <td>82+-1</td>
+      <td>82+-1</td>
+      <td>79+2</td>
+      <td>81+0</td>
+      <td>81+0</td>
+      <td>81+0</td>
+      <td>79+2</td>
+      <td>70+3</td>
+      <td>73+3</td>
+      <td>73+3</td>
+      <td>73+3</td>
+      <td>70+3</td>
+      <td>67+3</td>
+      <td>64+3</td>
+      <td>64+3</td>
+      <td>64+3</td>
+      <td>67+3</td>
+      <td>17+3</td>
+      <td>Male</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 

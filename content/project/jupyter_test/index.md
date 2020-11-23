@@ -7,7 +7,7 @@ authors: ["Jack Pennington"]
 tags: ["Machine Learning", "Classification"]
 categories: []
 date: 2020-11-22T16:07:35Z
-
+tyoe: docs
 toc: true  # Show table of contents? true/false
 
 # Optional external URL for project (replaces project detail page).

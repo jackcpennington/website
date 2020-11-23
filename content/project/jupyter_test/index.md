@@ -50,20 +50,17 @@ df.head()
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
-        width: 100%;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
-        width: 100px;
     }
 
     .dataframe thead th {
         text-align: right;
-        width: 100px;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe" style="width: 100%">
   <thead>
     <tr style="text-align: right;">
       <th></th>

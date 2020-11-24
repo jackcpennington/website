@@ -4,8 +4,8 @@
 title: "Classifying Player Positions From Their FIFA 21 Statistics"
 summary: "In this project I build a classifier to classify player positions based on their statistics, using the data from the FIFA 21 dataset."
 authors: ["Jack Pennington"]
-tags: ["Machine Learning", "Classification"]
-categories: ["Test"]
+tags: ["Machine Learning", "Classification", "FIFA", "Project"]
+categories: ["Machine Learning"]
 date: 2020-11-01T12:00:00Z
 
 # Optional external URL for project (replaces project detail page).

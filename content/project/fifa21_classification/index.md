@@ -2,11 +2,11 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Classifying Players Positions From Their FIFA 21 Statistics"
-summary: ""
+summary: "In this project I build a classifier to classify players positions based on their statistics, using the data from the FIFA 21 dataset."
 authors: ["Jack Pennington"]
 tags: ["Machine Learning", "Classification"]
-categories: []
-date: 2020-11-22T16:07:35Z
+categories: ["Test]
+date: 2020-11-01T12:00:00Z
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
@@ -15,7 +15,7 @@ external_link: ""
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
-  caption: "FIFA 21"
+  caption: "FIFA 21 (Source: EA)"
   focal_point: "Center"
   preview_only: false
 
@@ -40,8 +40,7 @@ url_video: ""
 slides: ""
 ---
 
-# Classfying Players Positions From Their FIFA 21 Statistics
-The new FIFA 21 game came out recently, which my flat mate got on release. While playing I thought it would be cool to apply some things I've learnt during Uni, and then I found a dataset of all the players. So I decided to do this project. In the project I will be following a workflow from one of my core textbooks http://index-of.es/Varios-2/Hands%20on%20Machine%20Learning%20with%20Scikit%20Learn%20and%20Tensorflow.pdf
+The new FIFA 21 game came out recently, which my flat mate got on release. While playing I thought it would be cool to apply some things I've learnt during Uni, and then I found a dataset of all the players. So I decided to do this project. In the project I will be following a workflow from one of my core [textbooks](http://index-of.es/Varios-2/Hands%20on%20Machine%20Learning%20with%20Scikit%20Learn%20and%20Tensorflow.pdf)
 
 ## Framing the Problem
 * The **Objective** of this project is to classify players positions based on there statistics and ratings.
@@ -50,7 +49,7 @@ The new FIFA 21 game came out recently, which my flat mate got on release. While
 * The minimum performace needed to reach the objective is and accuracy of 3.7% (as there are 27 categories, choosing randomly would have this accuracy)
 
 ## Getting the Data
-The data I will be using is the Fifa 21 Complete Player Dataset (https://www.kaggle.com/ekrembayar/fifa-21-complete-player-dataset/notebooks). This contains all the info of each player on the FIFA 21 game
+The data I will be using is the [Fifa 21 Complete Player Dataset](https://www.kaggle.com/ekrembayar/fifa-21-complete-player-dataset/notebooks). This contains all the info of each player on the FIFA 21 game
 
 
 ```python
@@ -92,7 +91,6 @@ from sklearn.metrics import accuracy_score, classification_report, make_scorer
 
 
 # Displays full dataframe
-
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
@@ -992,7 +990,7 @@ sns.heatmap(corr)
 
 
 Observation
-* Strong corrlation for Goalkeeper traits as expected
+* Strong correlation for Goalkeeper traits as expected
 * Some strong correlations for Defender traits too e.g. Defending, Marking and Tackling
 
 
@@ -1012,7 +1010,7 @@ sns.countplot(x="BP", hue = "foot", data=train_df)
 
 
 Observations
-* Slight correlation between Preferred foot and postion. Players on left side more likely to be left footed
+* Slight correlation between preferred foot and position. Players on left side more likely to be left footed
 
 
 ```python
@@ -1108,7 +1106,7 @@ sns.displot(data=train_df, x="Power", hue="Pos_Type", stat="frequency", kde=True
 ![svg](./index_28_3.svg)
 
 
-Another Interesting style of visualisation showing distributiong of postions based ons stats.
+Another interesting style of visualisation, showing distributiong of positions based on stats.
 
 
 ```python
@@ -1161,15 +1159,15 @@ sns.violinplot(data=train_df, x="Pos_Type", y="Goalkeeping")
 ### Preparing the Data
 
 1.  Data cleaning: 
-* Fix or remove outliers (optional).
-* Fill in missing values (e.g., with zero, mean, median...) or drop their rows (orcolumns).
+    * Fix or remove outliers (optional).
+    * Fill in missing values (e.g., with zero, mean, median...) or drop their rows (orcolumns).
 2. Feature selection (optional):
-* Drop the attributes that provide no useful information for the task.
+    * Drop the attributes that provide no useful information for the task.
 3.  Feature engineering, where appropriate:
-* Discretize continuous features
-•  Decompose features (e.g., categorical, date/time, etc.).
-* Add promising transformations of features (e.g., log(x), sqrt(x), x^2, etc.).
-* Aggregate features into promising new features.
+    *  Discretize continuous features
+    * Decompose features (e.g., categorical, date/time, etc.).
+    * Add promising transformations of features (e.g., log(x), sqrt(x), x^2, etc.).
+    * Aggregate features into promising new features.
 4.  Feature scaling: standardize or normalize features.Short
 
 
@@ -1189,6 +1187,8 @@ print(list(train_df.columns))
 
 
 Removing unecessary features. I will also remove the Positions feature, and the rating of the player in pther positions as this is cheating.
+
+### Feature Selection
 
 
 ```python
@@ -2670,7 +2670,7 @@ model_metrics_df.head(8)
 
 
 
-### Quick Analyse of models
+### Analysis of the models
 
 Read all the csv files from each iteration, combine into a single DataFrame so can easily compare
 
@@ -2775,7 +2775,10 @@ model_results.head(3)
 
 
 
-You can see the best model found was the MLP when we used scaling with an accuracy of 0.83, GBC also performed well with an accuracy of 0.79. So I will fine tune these 2, starting with the MLP
+* You can see the best model found was the MLP when we used scaling with an accuracy of 0.83
+* GBC also performed well with an accuracy of 0.79
+
+So I will fine tune these 2, starting with the MLP
 
 ## Fine-Tuning the System
 
@@ -3223,7 +3226,7 @@ res_gs.head(5)
 
 
 
-The second best performing model was the GBC, with the varience threshold.
+The second best performing model was the GBC, with the varience threshold. Idecided to change to using a randomised search, so would not take too long. A comparison can be seen in this [article](https://blog.usejournal.com/a-comparison-of-grid-search-and-randomized-search-using-scikit-learn-29823179bc85)
 
 
 ```python
@@ -3566,6 +3569,8 @@ res_gs_2.head(5)
 </div>
 
 
+
+Running both models with the best parameters again.
 
 
 ```python

@@ -1,8 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Classifying Players Positions From Their FIFA 21 Statistics"
-summary: "In this project I build a classifier to classify players positions based on their statistics, using the data from the FIFA 21 dataset."
+title: "Classifying Player Positions From Their FIFA 21 Statistics"
+summary: "In this project I build a classifier to classify player positions based on their statistics, using the data from the FIFA 21 dataset."
 authors: ["Jack Pennington"]
 tags: ["Machine Learning", "Classification"]
 categories: ["Test"]
@@ -45,7 +45,7 @@ slides: ""
 The new FIFA 21 game came out recently, which my flat mate got on release. While playing I thought it would be cool to apply some things I've learnt during Uni, and then I found a dataset of all the players. So I decided to do this project. In the project I will be following a workflow from one of my core [textbooks](http://index-of.es/Varios-2/Hands%20on%20Machine%20Learning%20with%20Scikit%20Learn%20and%20Tensorflow.pdf)
 
 ## Framing the Problem
-* The **Objective** of this project is to classify players positions based on there statistics and ratings.
+* The **Objective** of this project is to classify player positions based on there statistics and ratings.
 * This will be an offline supervised problem
 * The performanced will be **measured** by using suitable metrics to calcualte the overall accuracy (e.g accuracy, precision, recall, f1score)
 * The minimum performace needed to reach the objective is and accuracy of 3.7% (as there are 27 categories, choosing randomly would have this accuracy)

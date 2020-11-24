@@ -40,6 +40,8 @@ url_video: ""
 slides: ""
 ---
 
+{{% toc %}}
+
 The new FIFA 21 game came out recently, which my flat mate got on release. While playing I thought it would be cool to apply some things I've learnt during Uni, and then I found a dataset of all the players. So I decided to do this project. In the project I will be following a workflow from one of my core [textbooks](http://index-of.es/Varios-2/Hands%20on%20Machine%20Learning%20with%20Scikit%20Learn%20and%20Tensorflow.pdf)
 
 ## Framing the Problem
@@ -3859,12 +3861,12 @@ print(classification_report(y_predictions_converted, y_test_converted))
 There we have a 94% accuracy for predicting Forwards, Midfielder, Defenders and Goalkeepers
 
 ## Conclusions
-* I have built a classifer that can predict FIFA21 players positions based on their stats, with an accuracy of 87%
+* I have built a classifer that can predict FIFA 21 players positions based on their stats, with an accuracy of 87%
 * These could adapted for real life to help managers choose the best players for positions suited to them
-    * Could perform test for each trait. e.g.g shooting/dribbilin/heading
+    * Could perform test for each trait. e.g. shooting/dribbling/heading
     * Collect the results and input into the model
 
-# Further work
+## Further work
 * Further work could include creating a Neaural Network in Tensorflow, which may increase the accuracy.
 * Could look at increasing the dataset wby combining with FIFA 20, FIFA 19 player datasets
 

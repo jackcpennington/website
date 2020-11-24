@@ -808,7 +808,6 @@ train_df, test_df = train_test_split(df, test_size=0.1, random_state=100699)
 
 
 
-### Create a copy of the data for exploration (sampling it down to a manageable sizeif necessary).
 Having a copy of the original data is always a good idea in case you mess anything up
 
 
@@ -817,7 +816,7 @@ Having a copy of the original data is always a good idea in case you mess anythi
 train_df_copy = train_df.copy()
 ```
 
-### Study each attribute and its characteristics
+### Attribute and its Characteristics
 
 
 ```python
@@ -943,7 +942,7 @@ train_df.dtypes
 * Some irrelvant features, like ID, player Photo, Club Photo etc.
 * There are stats for there overall rating, top level ratings ('Pace', 'Shooting' etc.) and low level ratings e.g 'Shooting' might be made up of 'Shot Power', 'Attacking', 'Curve', 'FK Accuracy', 'penalties' etc.
 
-### For supervised learning tasks, identify the target attribute(s).
+### Identify the target attribute(s).
 Looking at the columns we can 'BP' meaning Best Position will be our target variable. The Columns 'Postions' also provide other postiions they play. An extension of this could also be looking at there ratings of other positions, and predicting the 2nd and 3rd best positions
 
 
@@ -1158,7 +1157,7 @@ sns.violinplot(data=train_df, x="Pos_Type", y="Goalkeeping")
 ![svg](./index_32_1.svg)
 
 
-### Preparing the Data
+## Preparing the Data
 
 1.  Data cleaning: 
     * Fix or remove outliers (optional).
@@ -1521,6 +1520,8 @@ test_df.isna().sum()
 
 
 Clean the features so only numeric
+
+### Feature Engineering
 
 
 ```python

@@ -47,8 +47,8 @@ The new FIFA 21 game came out recently, which my flat mate got on release. While
 ## Framing the Problem
 * The **Objective** of this project is to classify player positions based on their statistics and ratings.
 * This will be an offline supervised problem
-* The performanced will be **measured** by using suitable metrics to calcualte the overall accuracy (e.g accuracy, precision, recall, f1score)
-* The minimum performace needed to reach the objective is and accuracy of 3.7% (as there are 27 categories, choosing randomly would have this accuracy)
+* The performanced will be **measured** by using suitable metrics to calculate the overall accuracy (e.g accuracy, precision, recall, f1score)
+* The minimum performace needed to reach the objective is an accuracy of 3.7% (as there are 27 categories, choosing randomly would have this accuracy)
 
 ## Getting the Data
 The data I will be using is the [Fifa 21 Complete Player Dataset](https://www.kaggle.com/ekrembayar/fifa-21-complete-player-dataset/notebooks). This contains all the info of each player on the FIFA 21 game
